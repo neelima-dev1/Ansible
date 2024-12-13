@@ -1,0 +1,9 @@
+
+
+- name: variables from prompt
+  hosts: web
+  tasks:
+  - name: print the course information
+    ansible.builtin.debug:
+      msg: "Hello {{Name}}, Good{{Greetings}}"
+      
