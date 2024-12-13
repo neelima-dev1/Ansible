@@ -2,20 +2,20 @@
 
 - name: variables from prompt
   hosts: web
-#   vars:
-#     COURSE: "DevOps with AWS from Play level"
-#     DURATION: "120Hrs"
-#     TRAINER: "Sivakumar Reddy M"
-  # vars_files:
-  # - vars.yaml  
-  # vars_prompt:
-  # - name: COURSE
-  #   prompt: please enter the course name
-  #   private: false #not confidential 
+  vars:
+    COURSE: "DevOps with AWS from Play level"
+    DURATION: "120Hrs"
+    TRAINER: "Sivakumar Reddy M"
+  vars_files:
+  - vars.yaml  
+  vars_prompt:
+  - name: COURSE
+    prompt: please enter the course name
+    private: false #not confidential 
   tasks:
   - name: print the course information
     vars:
-      #COURSE: "DevOps with AWS from Task level"
+      COURSE: "DevOps with AWS from Task level"
       DURATION: "120Hrs"
       TRAINER: "Sivakumar Reddy M"
     ansible.builtin.debug:
@@ -27,3 +27,5 @@
 # 3. files
 # 4. prompt
 # 5. play level
+# 6. inventory
+# 7. roles based
