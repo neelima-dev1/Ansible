@@ -24,3 +24,19 @@
       numbers: [1,2,3,45,4,3,8,6]
     ansible.builtin.debug:
         msg: "{{ numbers | unique }}"     
+
+  - name: get the min and max values
+    vars:
+      numbers: [1,2,3,45,4,3,8,6]
+    ansible.builtin.debug:
+        msg: " Min: {{ numbers | min }}, Max:" " Max: {{ numbers | max }}, Min:"  
+
+
+  - name: convert map to list
+    vars:
+      course:
+        name: "DevOps with AWS"
+        duration: 120
+        trainer: "sivakumar reddy"
+    ansible.builtin.debug:
+        msg: "{{ course | dic2items }}"
