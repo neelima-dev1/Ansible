@@ -5,3 +5,8 @@
     - name: execute the command
       ansible.builtin.shell: ls -ltr > /tmp/output.txt # shell login to the server and executecommand inside
       # command module-->can't do that andit just issues the command
+
+
+    - name: check the process
+      ansible.builtin.command: ps -ef | grep ssh
+      register: output  
